@@ -1,0 +1,31 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: java setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: build
+        run: mvn clean package
+
+      - name: test
+        run: mvn test
+
+      - name: artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: jar
+          path: target/*.jar
+
+      - name: docker build
+        run: docker build -t myapp:10 .
