@@ -6,6 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class AppTest {
     @Test
     void greetReturnsExpectedMessage() {
-        assertEquals("Hello from CI pipeline", App.greet());
+        assertEquals("Hello from CI pipeline 1", App.greet());
     }
 }

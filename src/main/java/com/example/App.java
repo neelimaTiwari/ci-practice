@@ -9,7 +9,7 @@ public class App {
 
     // greet() waisa hi hai - isliye purana test bina change ke pass hoga
     public static String greet() {
-        return "Hello from CI pipeline";
+        return "Hello from CI pipeline 1";
     }
 
     public static void main(String[] args) throws IOException {
